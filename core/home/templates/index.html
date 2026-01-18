@@ -1,0 +1,22 @@
+{% extends "par.html" %}
+{% block hcl %}
+    <a href="/contact/">Contact</a>
+    |
+    <a href="/about/">About</a>
+    <h1>Welcome to the Home Page!</h1>
+    <p>
+    {% if age >= 18 %}
+        <p>You are an adult.</p>
+    {% endif %}
+    </p>
+    <p>
+            {% for i in names %}
+                <H1>{{i}}</H1>
+            {% empty %}
+                <p>No names available.</p>
+            {% endfor %}
+    </p>
+    {% lorem 3 p random %}
+    It is {% now "Y-m-d H:M" %}
+    
+{% endblock %}
